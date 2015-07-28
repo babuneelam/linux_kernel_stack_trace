@@ -85,6 +85,6 @@ static void my_get_and_print_stack_trace()
 
 
     for (k = 0; (k < stk_trace_len); k++) {
-        sprintf(page + count, "    %pS\n", (void *)stk_trace[k]);
+        printk("    %pS\n", (void *)stk_trace[k]);
     }
 }
