@@ -1,4 +1,6 @@
 
+#include "asm_powerpc_stk.h"
+
 #define  MAX_STK_DEPTH 30
 #define  STK_TRACE_SKIP_CNT 2
 
@@ -50,7 +52,7 @@ static __always_inline unsigned int my_get_stack_trace(unsigned long *stk_trace)
         unsigned long sp;
         unsigned int i;
 
-        sp = my_get_current_stack_pointer();
+        sp = my_get_current_stack_pointer(sp);
 
         for (i=1; i< STK_TRACE_SKIP_CNT; i++)
         {
